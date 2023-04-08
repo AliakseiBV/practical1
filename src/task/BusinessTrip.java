@@ -36,7 +36,7 @@ public class BusinessTrip {
     }
 
     //method 'Total'
-    private String getTotal(){
+    public String getTotal(){
         int total = dailyAllowanceRate * getNumberOfDays() + getTransportationExpenses();
         return centsToEuro(total);
     }

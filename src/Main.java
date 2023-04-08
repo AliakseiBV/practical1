@@ -1,11 +1,16 @@
 import task.BusinessTrip;
+
+
+//this is the code from stage 2. It's the same as on stage 1.
+//Since all the requirements from stage 2-file were already met - i didn't change anything.
+
 public class Main {
 
     public static void main(String[] args) {
 
         BusinessTrip[] BusinessTrips = new BusinessTrip[]{
                 new BusinessTrip("Sergey Rachmaninoff", 2200, 15),
-                new BusinessTrip(null, 0, 0),
+                new BusinessTrip(null, 0, 1),
                 new BusinessTrip("Alfred Schnitke", 110, 1),
                 new BusinessTrip("John Cage", 433, 2),
                 new BusinessTrip()
@@ -46,8 +51,8 @@ public class Main {
         BusinessTrip tripWithMaximumCost = new BusinessTrip("null", 0, 0);
         for (BusinessTrip businessTrip : BusinessTrips) {
             for (BusinessTrip businessTripInternal : BusinessTrips) {
-                if((businessTrip.getTotalInCents() > businessTripInternal.getTotalInCents())
-                        && (businessTrip.getTotalInCents() > tripWithMaximumCost.getTotalInCents())){
+                if ((businessTrip.getTotalInCents() > businessTripInternal.getTotalInCents())
+                        && (businessTrip.getTotalInCents() > tripWithMaximumCost.getTotalInCents())) {
                     tripWithMaximumCost = businessTrip;
                 }
             }
