@@ -1,7 +1,7 @@
 package task;
 
 public class BusinessTrip {
-    private final static int dailyAllowanceRate = 2300;
+    private final static int DAILY_RATE = 2300;
     private String employeesAccount;
     private int transportationExpenses;
     private int numberOfDays;
@@ -22,26 +22,23 @@ public class BusinessTrip {
 
     // show-method
     public String showAll (){
-        return "rate: " + centsToEuro(dailyAllowanceRate) + "\n" +
+        return "rate: " + centsToEuro(DAILY_RATE) + "\n" +
                 "account: " + getEmployeesAccount() + "\n" +
                 "transport: " + centsToEuro(getTransportationExpenses()) + "\n" +
                 "days: " + getNumberOfDays() + "\n" +
-                "total: " + getTotal();
+                "total: " + centsToEuro(getTotal());
     }
 
     // overriding toString method
     public String toString(){
         return this.employeesAccount + ";" + centsToEuro(this.transportationExpenses) + ";"
-                + this.numberOfDays + ";" + centsToEuro(this.numberOfDays + getTotalInCents());
+                + this.numberOfDays + ";" + centsToEuro(this.numberOfDays + getTotal());
     }
 
     //method 'Total'
-    public String getTotal(){
-        int total = dailyAllowanceRate * getNumberOfDays() + getTransportationExpenses();
-        return centsToEuro(total);
-    }
-    public int getTotalInCents(){
-        return dailyAllowanceRate * getNumberOfDays() + getTransportationExpenses();
+    public int getTotal(){
+        int total = DAILY_RATE * getNumberOfDays() + getTransportationExpenses();
+        return total;
     }
 
     //Method to format Cents to Euro
