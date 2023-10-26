@@ -21,18 +21,18 @@ public class BusinessTrip {
     }
 
     // show-method
-    public String showAll (){
-        return "rate: " + centsToEuro(DAILY_RATE) + "\n" +
+    public void show (){
+        System.out.println("rate: " + centsToEuro(DAILY_RATE) + "\n" +
                 "account: " + getEmployeesAccount() + "\n" +
                 "transport: " + centsToEuro(getTransportationExpenses()) + "\n" +
                 "days: " + getNumberOfDays() + "\n" +
-                "total: " + centsToEuro(getTotal());
+                "total: " + centsToEuro(getTotal()) + "\n");
     }
 
     // overriding toString method
     public String toString(){
         return this.employeesAccount + ";" + centsToEuro(this.transportationExpenses) + ";"
-                + this.numberOfDays + ";" + centsToEuro(this.numberOfDays + getTotal());
+                + this.numberOfDays + ";" + centsToEuro(getTotal());
     }
 
     //method 'Total'
